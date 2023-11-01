@@ -1,0 +1,48 @@
+	React Router
+
+React Router is a popular library for handling routing in React applications.
+ It allows you to create single-page applications (SPAs) by defining routes and rendering different components based on the current URL.
+ This helps you build multi-page experiences within a single HTML page without the need to request a new page from the server for each interaction.
+
+Key features of React Router:
+
+Declarative Routing: React Router provides a declarative way to define your application's routes. You can specify the routes and their corresponding components using a JSX syntax, making it easy to understand and maintain your application's routing logic.
+
+Nested Routes: React Router supports nested routes, allowing you to create complex layouts with components rendering within other components. This is useful for building applications with multiple levels of hierarchy, such as dashboards with sidebar navigation.
+
+Dynamic Routing: You can define dynamic routes with parameters that allow you to match URLs with specific patterns. These parameters can be accessed within your components to fetch data or perform conditional rendering.
+
+Route Matching: React Router offers different ways to match routes, such as exact, strict, and sensitive matching, to control how specific routes are matched and rendered.
+
+History API Integration: It integrates with the HTML5 History API, allowing you to manipulate the browser's history and handle navigation events (back and forward) while maintaining a single-page application feel.
+
+Route Redirects: You can easily set up route redirects, which direct the user to a different route when a specific condition is met or when a route is not found.
+
+Programmatic Navigation: You can programmatically navigate between routes in your application by using functions provided by React Router, making it easy to implement navigation based on user interactions or other application logic.
+
+To get started with React Router, you'll typically need to install the react-router-dom package, which is the version of React Router designed for web applications. You can then use components like BrowserRouter, Route, Link, and Switch to set up your routing configuration.
+	Example :- 
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-routerdom';
+
+const Home = () => <div>Home Page</div>;
+const About = () => <div>About Us</div>;
+
+const App = () => (
+<Router>
+<nav>
+<ul>
+<li><Link to="/">Home</Link></li>
+<li><Link to="/about">About</Link></li>
+</ul>
+</nav>
+
+<Switch>
+<Route exact path="/" component={Home} />
+<Route path="/about" component={About} />
+</Switch>
+</Router>
+);
+
+export default App;
